@@ -9,14 +9,18 @@ https://docs.djangoproject.com/en/4.2/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.2/ref/settings/
 """
-
+import os
 from pathlib import Path
-import pymysql  
+import pymysql
+
 pymysql.install_as_MySQLdb()
+
+
+
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
-
+DB_PASSWORD = os.environ.get("DB_PASSWORD")
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
@@ -82,7 +86,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'BOARD',
         'USER' : 'root',
-        'PASSWORD' : 'hbcho1425',
+        'PASSWORD' : DB_PASSWORD,
         'HOST': 'localhost',
         'PORT': '3306',
     }
