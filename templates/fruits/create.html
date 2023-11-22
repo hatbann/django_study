@@ -1,0 +1,33 @@
+<!-- @format -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <form action="createPost" method="post">
+      {% csrf_token %}
+      <div>
+        <label for="name">과일 이름</label>
+        <input type="text" name="fname" id="name" />
+      </div>
+      <div>
+        <label for="description">과일 설명</label>
+        <input type="text" name="fdescript" id="description" />
+      </div>
+      <div>
+        <label for="price">과일 가격</label>
+        <input type="text" name="fprice" id="price" />
+      </div>
+      <div>
+        <label for="quantity">과일 수량</label>
+        <input type="text" name="fquantity" id="quantity" />
+      </div>
+      <button>저장</button>
+    </form>
+  </body>
+</html>

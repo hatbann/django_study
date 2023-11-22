@@ -17,12 +17,14 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 import ex01.views
-import board.views
+import Fruits.views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('ex01/', ex01.views.func1),
     path('ex01/input', ex01.views.func2),
     path('ex01/getPost', ex01.views.getPost),
-    path('', board.views.mainPage)
+    path('', Fruits.views.createFruitGet),
+    path('createPost', Fruits.views.createFruitPost),
+    path('fruit/list', Fruits.views.readFruitGetAll )
 ]
